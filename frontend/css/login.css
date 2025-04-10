@@ -1,0 +1,378 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Orbitron', sans-serif;
+}
+
+body {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: url('../images/bg6.png') no-repeat center center/cover;
+  position: relative;
+}
+
+/* === Title === */
+.title {
+  font-size: 3rem;
+  color: white;
+  text-transform: uppercase;
+  text-shadow: 0 0 30px #00f2ff, 0 0 60px #ff00ff;
+  animation: flicker 1.5s infinite alternate;
+}
+
+@keyframes flicker {
+  0% { opacity: 1; text-shadow: 0 0 20px cyan; }
+  50% { opacity: 0.8; text-shadow: 0 0 40px cyan; }
+  100% { opacity: 1; text-shadow: 0 0 20px cyan; }
+}
+
+/* === Login Form === */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  margin-top: 20px;
+}
+
+/* === Inputs === */
+.login-form input {
+  width: 250px;
+  padding: 10px;
+  font-size: 1rem;
+  color: white;
+  background: transparent;
+  border: 2px solid cyan;
+  text-align: center;
+  outline: none;
+  box-shadow: 0 0 10px cyan;
+  transition: 0.3s;
+}
+
+.login-form input:focus {
+  border-color: magenta;
+  box-shadow: 0 0 20px magenta;
+}
+
+input:hover {
+  box-shadow: 0 0 15px cyan;
+}
+
+input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 16px;
+}
+
+/* === Login Button === */
+.btn {
+  font-size: 1.3rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 12px 35px;
+  border-radius: 10px;
+  cursor: pointer;
+  position: relative;
+  background: transparent;
+  color: #00f2ff;
+  border: 2px solid #00f2ff;
+  box-shadow: 0 0 15px #00f2ff, 0 0 30px #00f2ff;
+  animation: pulseGlow 1.8s infinite alternate ease-in-out;
+  transition: 0.4s ease-in-out;
+  overflow: hidden;
+}
+
+.btn:hover {
+  color: black;
+  background: #00f2ff;
+  box-shadow: 0 0 40px #00f2ff, 0 0 60px #00f2ff;
+  animation: sparkEffect 0.3s alternate infinite;
+}
+
+@keyframes pulseGlow {
+  0% { box-shadow: 0 0 15px rgba(0, 242, 255, 0.7); }
+  50% { box-shadow: 0 0 30px rgba(0, 242, 255, 1); }
+  100% { box-shadow: 0 0 15px rgba(0, 242, 255, 0.7); }
+}
+
+@keyframes sparkEffect {
+  0% { box-shadow: 0 0 10px #00f2ff; }
+  100% { box-shadow: 0 0 20px #00f2ff, 0 0 40px #00f2ff; }
+}
+
+/* === Glitch Text === */
+.glitch-only {
+  color: white;
+  font-size: 1.2rem;
+  animation: glitch 2s infinite;
+  display: inline-block;
+  margin-right: 8px;
+}
+
+@keyframes glitch {
+  0% { text-shadow: 2px 0 magenta, -2px 0 cyan; }
+  20% { text-shadow: -2px -1px magenta, 2px 1px cyan; }
+  40% { text-shadow: 2px 1px magenta, -2px -1px cyan; }
+  60% { text-shadow: -1px 2px magenta, 1px -2px cyan; }
+  80% { text-shadow: 2px 0 magenta, -2px 0 cyan; }
+  100% { text-shadow: none; }
+}
+
+.login-text {
+  margin-top: 20px;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  color: white;
+}
+
+.login-text a {
+  color: magenta;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+.login-btn {
+  font-size: 1.3rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 12px 40px;
+  border-radius: 15px;
+  background: linear-gradient(135deg, #1a1a40, #2f2f75);
+  color: #00f2ff;
+  border: 2px solid #00f2ff;
+  box-shadow: 0 0 15px #00f2ff, 0 0 30px #00f2ff;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  outline: none;
+  transition: 0.3s ease-in-out;
+}
+
+.login-btn::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: -100%;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(to right, transparent 10%, rgba(255, 255, 255, 0.4), transparent 90%);
+  transition: 0.5s;
+  z-index: 2;
+}
+.login-btn {
+  font-size: 1.3rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  border: none;
+  padding: 12px 35px;
+  border-radius: 10px;
+  cursor: pointer;
+  position: relative;
+  transition: 0.3s ease-in-out;
+  display: inline-block;
+  outline: none;
+  overflow: hidden;
+  background: transparent;
+  color: #00f2ff;
+  border: 2px solid #00f2ff;
+  box-shadow: 0 0 15px #00f2ff, 0 0 30px #00f2ff;
+  animation: bluePulseGlow 1.8s infinite alternate ease-in-out;
+}
+
+.login-btn:hover {
+  background: #00f2ff;
+  color: black;
+  box-shadow: 0 0 30px #00f2ff, 0 0 50px #00f2ff;
+  animation: blueSparkEffect 0.3s alternate infinite;
+}
+
+/* Spark streak on hover */
+.login-btn::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: -100%;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(to right, transparent 10%, rgba(255, 255, 255, 0.4), transparent 90%);
+  transition: 0.5s;
+}
+
+.login-btn:hover::before {
+  left: 100%;
+}
+
+/* Animations */
+@keyframes bluePulseGlow {
+  0%, 100% { box-shadow: 0 0 15px rgba(0, 242, 255, 0.7); }
+  50% { box-shadow: 0 0 30px rgba(0, 242, 255, 1); }
+}
+
+@keyframes blueSparkEffect {
+  0% { box-shadow: 0 0 10px #00f2ff; }
+  100% { box-shadow: 0 0 20px #00f2ff, 0 0 40px #00f2ff; }
+}
+
+
+/* === Spark Hover Effects === */
+@keyframes sparkEffect {
+  0% { box-shadow: 0 0 10px #00f2ff; }
+  100% { box-shadow: 0 0 20px #00f2ff, 0 0 40px #00f2ff; }
+}
+.neon-blue:hover {
+  background: #00f2ff;
+  color: black;
+  animation: sparkEffect 0.3s alternate infinite;
+}
+
+.login-btn:hover {
+  background: rgba(0, 255, 255, 0.1);
+  color: #00f2ff;
+  box-shadow: 0 0 20px #00f2ff, 0 0 40px #00f2ff, 0 0 60px #00f2ff;
+}
+
+.login-btn:hover::before {
+  left: 100%;
+}
+
+.login-btn:hover {
+  background: #00f2ff;
+  color: black;
+  box-shadow: 0 0 30px #00f2ff, 0 0 60px #00f2ff;
+}
+
+.login-text a:hover,
+.clean-link:hover {
+  color: #ff4500;
+  text-shadow: 0 0 10px #ff4500, 0 0 20px #ff4500;
+}
+.login-text a:hover {
+  color: #ff4500;
+}
+.glow-alert {
+    position: fixed;
+    top: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    font-family: 'Orbitron', sans-serif;
+    border-radius: 12px;
+    color: #fff;
+    z-index: 1000;
+    text-align: center;
+    backdrop-filter: blur(4px);
+    background: #0c0c2c;
+    border: 2px solid;
+    box-shadow: 0 0 18px rgba(255, 0, 128, 0.7);
+    animation: alertFade 0.5s ease-in-out;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .glow-alert.error {
+    border-color: #ff0044;
+    box-shadow: 0 0 15px #ff0044, 0 0 40px #ff0044;
+    color: #ff4c4c;
+  }
+  
+  .glow-alert.success {
+    border-color: #00ffae;
+    box-shadow: 0 0 15px #00ffae, 0 0 40px #00ffae;
+    color: #00ffc3;
+  }
+
+   glow {
+  from { box-shadow: 0 0 10px; }
+  to { box-shadow: 0 0 25px; }
+}
+.glitch-text {
+  font-size: 1.3rem;
+  position: relative;
+  animation: glitch-text 0.6s infinite alternate;
+  text-shadow: 2px 2px #ff00ff, -2px -2px #00f2ff;
+}
+
+@keyframes glitch-text {
+  0%, 100% {
+    transform: translate(0);
+    text-shadow: 2px 2px #ff00ff, -2px -2px #00f2ff;
+  }
+  20% {
+    transform: translate(1px, -1px);
+    text-shadow: 3px -2px #ff00ff, -3px 2px #00f2ff;
+  }
+  40% {
+    transform: translate(-1px, 1px);
+    text-shadow: -2px 3px #ff00ff, 2px -3px #00f2ff;
+  }
+  60% {
+    transform: translate(1px, 0);
+    text-shadow: 2px -2px #ff00ff, -2px 2px #00f2ff;
+  }
+}
+
+/* === Background Elements === */
+.scanline {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.1);
+  animation: scanline 3s linear infinite;
+}
+
+@keyframes scanline {
+  0% { top: -5%; opacity: 0.2; }
+  100% { top: 105%; opacity: 0; }
+}
+
+.holo-lines {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 2px solid rgba(0, 255, 255, 0.8);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+  pointer-events: none;
+  animation: pulseGlow 1.5s infinite alternate ease-in-out;
+}
+
+.holo-lines::before,
+.holo-lines::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 0, 255, 0.6);
+  box-shadow: 0 0 20px rgba(255, 0, 255, 0.8);
+}
+
+.holo-lines::before { transform: scale(0.8); opacity: 0.7; }
+.holo-lines::after { transform: scale(1.3); opacity: 0.5; }
+
+/* === Mobile Responsive === */
+@media (max-width: 768px) {
+  .title {
+    font-size: 2.2rem;
+  }
+
+  input, .btn {
+    width: 90%;
+    max-width: 300px;
+  }
+}
+.clean-link {
+  margin-left: 10px; /* 👈 Add some spacing */
+}

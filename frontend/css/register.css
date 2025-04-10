@@ -1,0 +1,323 @@
+/* ==== Import Font ==== */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap');
+
+/* ==== Reset & Base ==== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Orbitron', sans-serif;
+}
+
+body {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: url('../images/bg6.png') no-repeat center center/cover;
+  position: relative;
+}
+
+/* ==== Title ==== */
+.title {
+  font-size: 3rem;
+  color: white;
+  text-transform: uppercase;
+  text-shadow: 0 0 30px #00f2ff, 0 0 60px #ff00ff;
+  animation: flicker 1.5s infinite alternate;
+}
+
+@keyframes flicker {
+  0%, 100% { opacity: 1; text-shadow: 0 0 20px cyan; }
+  50% { opacity: 0.8; text-shadow: 0 0 40px cyan; }
+}
+
+/* ==== Registration Form ==== */
+.registration-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.registration-form input {
+  width: 250px;
+  padding: 10px;
+  font-size: 1rem;
+  color: white;
+  background: transparent;
+  border: 2px solid cyan;
+  text-align: center;
+  outline: none;
+  transition: 0.3s;
+  box-shadow: 0 0 10px cyan;
+}
+
+.registration-form input:focus {
+  border-color: magenta;
+  box-shadow: 0 0 20px magenta;
+}
+
+.registration-form input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 16px;
+}
+
+.registration-form input:hover {
+  box-shadow: 0 0 15px cyan;
+}
+
+/* ==== Glitch Text (for "Teacher Registration") ==== */
+.glitch-text {
+  font-size: 1.3rem;
+  position: relative;
+  animation: glitch-text 0.6s infinite alternate;
+  text-shadow: 2px 2px #ff00ff, -2px -2px #00f2ff;
+}
+
+@keyframes glitch-text {
+  0%, 100% {
+    transform: translate(0);
+    text-shadow: 2px 2px #ff00ff, -2px -2px #00f2ff;
+  }
+  20% {
+    transform: translate(1px, -1px);
+    text-shadow: 3px -2px #ff00ff, -3px 2px #00f2ff;
+  }
+  40% {
+    transform: translate(-1px, 1px);
+    text-shadow: -2px 3px #ff00ff, 2px -3px #00f2ff;
+  }
+  60% {
+    transform: translate(1px, 0);
+    text-shadow: 2px -2px #ff00ff, -2px 2px #00f2ff;
+  }
+}
+
+/* ==== Login Text Section ==== */
+.login-text {
+  margin-top: 30px;
+  text-align: center;
+  font-size: 1rem;
+  color: white;
+}
+
+.login-text .glitch-text,
+.login-text .clean-link {
+  display: inline-block;
+  margin: 0 5px;
+}
+
+.login-text a,
+.clean-link {
+  color: magenta;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.login-text a:hover,
+.clean-link:hover {
+  color: #00f2ff;
+  text-shadow: 0 0 10px #00f2ff, 0 0 20px #00f2ff;
+}
+
+/* ==== Register Button ==== */
+.register-btn,
+.btn {
+  font-size: 1.3rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  border: none;
+  padding: 12px 35px;
+  border-radius: 10px;
+  cursor: pointer;
+  position: relative;
+  transition: 0.3s ease-in-out;
+  display: inline-block;
+  outline: none;
+  overflow: hidden;
+}
+
+/* ==== Neon Orange Button (Shared + Standalone) ==== */
+.neon-orange,
+.register-btn {
+  background: transparent;
+  color: #ff4500;
+  border: 2px solid #ff4500;
+  box-shadow: 0 0 15px #ff4500, 0 0 30px #ff4500;
+  animation: orangePulseGlow 1.8s infinite alternate ease-in-out;
+}
+
+.neon-orange:hover,
+.register-btn:hover {
+  background: #ff4500;
+  color: black;
+  box-shadow: 0 0 30px #ff4500, 0 0 50px #ff4500;
+  animation: orangeSparkEffect 0.3s alternate infinite;
+}
+
+.btn::before,
+.register-btn::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: -100%;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(to right, transparent 10%, rgba(255, 255, 255, 0.4), transparent 90%);
+  transition: 0.5s;
+}
+
+.btn:hover::before,
+.register-btn:hover::before {
+  left: 100%;
+}
+
+/* ==== Glow & Spark Animations ==== */
+@keyframes orangePulseGlow {
+  0%, 100% { box-shadow: 0 0 15px rgba(255, 69, 0, 0.7); }
+  50% { box-shadow: 0 0 30px rgba(255, 69, 0, 1); }
+}
+
+@keyframes orangeSparkEffect {
+  0% { box-shadow: 0 0 10px #ff4500; }
+  100% { box-shadow: 0 0 20px #ff4500, 0 0 40px #ff4500; }
+}
+
+/* ==== Holographic Rings ==== */
+.holo-lines {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 2px solid rgba(0, 255, 255, 0.8);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+  pointer-events: none;
+  animation: pulseGlow 1.5s infinite alternate ease-in-out;
+}
+
+.holo-lines::before,
+.holo-lines::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 0, 255, 0.6);
+  box-shadow: 0 0 20px rgba(255, 0, 255, 0.8);
+}
+
+.holo-lines::before {
+  transform: scale(0.8);
+  opacity: 0.7;
+}
+
+.holo-lines::after {
+  transform: scale(1.3);
+  opacity: 0.5;
+}
+
+/* ==== Data Streaming Lines ==== */
+.data-lines div {
+  position: absolute;
+  top: -10vh;
+  width: 2px;
+  height: 100vh;
+  background: rgba(0, 255, 255, 0.6);
+  animation: dataStream 4s linear infinite;
+}
+
+.data-lines div:nth-child(odd) {
+  left: 10%;
+  animation-duration: 3s;
+}
+
+.data-lines div:nth-child(even) {
+  left: 70%;
+  animation-duration: 5s;
+}
+
+@keyframes dataStream {
+  0% {
+    transform: translateY(0) scaleY(1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(100vh) scaleY(1.5);
+    opacity: 0;
+  }
+}
+
+/* ==== Scanline Effect ==== */
+.scanline {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.1);
+  animation: scanline 3s linear infinite;
+}
+
+@keyframes scanline {
+  0% { top: -5%; opacity: 0.2; }
+  100% { top: 105%; opacity: 0; }
+}
+
+/* ==== Responsive ==== */
+@media (max-width: 768px) {
+  .title {
+    font-size: 2.5rem;
+  }
+
+  input,
+  .btn {
+    width: 90%;
+    max-width: 300px;
+  }
+}
+.glow-alert {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.7);
+  padding: 15px 30px;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  text-align: center;
+  z-index: 9999;
+  animation: glowPop 0.3s ease-in-out;
+  font-weight: bold;
+}
+
+/* Red Alert */
+.glow-alert.error {
+  color: #ff3c3c;
+  border: 2px solid #ff3c3c;
+  box-shadow: 0 0 15px #ff3c3c, 0 0 30px #ff3c3c;
+}
+
+.glow-alert.success {
+  border-color: #00ffae;
+  box-shadow: 0 0 15px #00ffae, 0 0 40px #00ffae;
+  color: #00ffc3;
+}
+
+
+@keyframes glowPop {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+  }
+}

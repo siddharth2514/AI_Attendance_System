@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Teacher Login</title>
+</head>
+<body>
+    <h1>Teacher Login</h1>
+    {% if error %}
+      <p style="color:red;">{{ error }}</p>
+    {% endif %}
+    <form method="POST">
+        <label>Email:</label>
+        <input type="email" name="email" placeholder="yourname@srmist.edu.in" required><br>
+        <label>Password:</label>
+        <input type="password" name="password" required><br>
+        <button type="submit">Login</button>
+    </form>
+    <p>New here? <a href="{{ url_for('register') }}">Register now</a></p>
+</body>
+</html>

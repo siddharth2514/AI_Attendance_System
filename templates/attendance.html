@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Attendance Details</title>
+</head>
+<body>
+    <h1>Attendance Records</h1>
+    {% if details %}
+        <table border="1">
+            <tr>
+                <th>ID</th>
+                <th>Student Roll No.</th>
+                <th>Date</th>
+                <th>Status</th>
+            </tr>
+            {% for row in details %}
+            <tr>
+                <td>{{ row[0] }}</td>
+                <td>{{ row[1] }}</td>
+                <td>{{ row[2] }}</td>
+                <td>{{ row[3] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+        <p>No attendance records found.</p>
+    {% endif %}
+    <a href="{{ url_for('upload') }}">Back to Upload</a> |
+    <a href="{{ url_for('logout') }}">Logout</a>
+</body>
+</html>

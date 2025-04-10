@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Attendance Results</title>
+</head>
+<body>
+    <h1>Attendance Results</h1>
+    {% if results %}
+        <ul>
+        {% for res in results %}
+            <li>
+                Face {{ res.face_id }}: 
+                {% if res.best_match %}{{ res.best_match }}{% else %}Unknown{% endif %} -
+                {% if res.verified %}Present{% else %}Not Verified{% endif %} (Distance: {{ res.distance|round(4) }})
+            </li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No faces detected or verification failed.</p>
+    {% endif %}
+    <a href="{{ url_for('upload') }}">Upload Another Photo</a> |
+    <a href="{{ url_for('attendance') }}">View Attendance</a>
+</body>
+</html>

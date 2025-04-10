@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Upload Group Photo</title>
+</head>
+<body>
+    <h1>Upload Class Photo</h1>
+    <form method="POST" enctype="multipart/form-data">
+        <input type="file" name="photo" accept="image/*" required>
+        <button type="submit">Upload</button>
+    </form>
+    <p><a href="{{ url_for('logout') }}">Logout</a> | <a href="{{ url_for('attendance') }}">View Attendance</a></p>
+</body>
+</html>
