@@ -4,10 +4,10 @@ import numpy as np
 
 # PostgreSQL connection setup
 conn = psycopg2.connect(
-    host="localhost",
-    database="attendance_system",
-    user="postgres",
-    password="admin",
+    host="",
+    database="",
+    user="",
+    password="",
     port=5432
 )
 cursor = conn.cursor()
